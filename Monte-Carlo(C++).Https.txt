@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+double x, y, tp, r, i, tz = 0, tf = 0, s;
+srand(time(NULL));
+
+cout <<"N = ";
+cin >> r;
+cout << endl;
+
+for (i=1; i <= r ; i++)
+{
+x = (double)rand() / (double)RAND_MAX * 8;
+
+y = (double)rand() / (double)RAND_MAX * 8;
+
+tp = x * 0.5 + 4;
+if (y > tp || y < 4 || y < 6 && y > 5 && x > 5 && x < 7)
+{
+tz++;
+}
+else
+{
+tf++;
+}
+}
+
+s = (64 * tf) / (tz + tf);
+
+cout << "S = "<< s << endl;
+
+system("pause");
+return 0;
+}
